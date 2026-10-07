@@ -7,7 +7,6 @@ This project analyzes e-commerce orders to identify revenue trends, data-quality
 ```text
 .
 ├── README.md
-├── requirements.txt
 ├── sql/
 │   ├── schema.sql
 │   ├── seed_data.sql
@@ -212,19 +211,7 @@ The script supports two modes:
 
 The recommended approach is to store the key as an environment variable rather than putting it directly into the source code.
 
-### Linux/macOS
 
-Set the environment variable in the terminal:
-
-```bash
-export GEMINI_API_KEY="your_api_key_here"
-```
-
-Then run:
-
-```bash
-python narrator/generate_narrative.py
-```
 
 ### Windows PowerShell
 

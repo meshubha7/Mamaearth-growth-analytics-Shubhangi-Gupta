@@ -1,0 +1,11 @@
+Situation
+
+The business recorded cleaned total revenue of 97,358.30 INR after a duplicate-driven reconciliation delta of 2,501.90 INR. The validated peak month was March, with revenue of 20,318.90 INR.
+
+Complication
+
+COD has a return rate of 44.4%. The highest-risk segment is COD in Tier-2, where the return rate is 54.5%.
+
+Resolution
+
+Regional operations and finance teams should use the cleaned revenue as the reporting baseline, monitor COD returns closely, and focus operational review on the identified Tier-2 segment while using March as the validated peak-month reference.

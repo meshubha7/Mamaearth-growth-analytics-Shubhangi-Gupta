@@ -62,22 +62,6 @@ Run:
 
 The report queries provide the SQL-side analysis used to inspect revenue, orders, returns, and other business metrics.
 
-For PostgreSQL, the three files can be run from `psql` in this order:
-
-```bash
-psql -d <database_name>
-```
-
-Then inside `psql`:
-
-```sql
-\i sql/schema.sql
-\i sql/seed_data.sql
-\i sql/reports.sql
-```
-
-Replace `<database_name>` with the name of your PostgreSQL database.
-
 **Important:** Run the files in this order. `seed_data.sql` depends on the tables created by `schema.sql`, and `reports.sql` depends on the loaded data.
 
 ---
@@ -86,13 +70,6 @@ Replace `<database_name>` with the name of your PostgreSQL database.
 
 The Python workflow cleans the order data, validates the results, performs exploratory analysis, and creates the project visualizations.
 
-## Install dependencies
-
-From the project root:
-
-```bash
-pip install -r requirements.txt
-```
 
 The Python scripts expect the CSV files in:
 

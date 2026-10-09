@@ -24,7 +24,6 @@ This project analyzes e-commerce orders to identify revenue trends, data-quality
 └── narrator/
     ├── findings.json
     ├── generate_narrative.py
-    └── sample_output.txt
 ```
 
 ---

@@ -86,10 +86,9 @@ def generate_scr_narrative(findings: dict) -> dict:
     Falls back to the deterministic offline function on failure.
     """
 
-    # Your Gemini API key environment variable is named SG_api_key.
+    
     api_key = os.getenv("SG_api_key")
 
-    # No API key: immediately use the deterministic offline path.
     if not api_key:
         print("SG_api_key not found.")
         print("Using deterministic offline fallback.")
@@ -98,9 +97,7 @@ def generate_scr_narrative(findings: dict) -> dict:
     try:
         client = genai.Client(api_key=api_key)
 
-        # Temperature 0.0 is intentional because this is a factual
-        # business report, not creative writing, so deterministic output
-        # is preferred.
+        
         system_instruction = """
 You are a senior data analyst writing for Mamaearth's regional ops
 and finance heads.
@@ -126,8 +123,7 @@ Keep the narrative concise, factual, and suitable for regional
 operations and finance leadership.
 """
 
-        # The numbers are taken from the findings argument.
-        # Nothing is hardcoded here.
+       
         contents = f"""
 Create the required Situation-Complication-Resolution business
 narrative from these verified findings:
@@ -152,7 +148,7 @@ Every number used in the narrative must come from these findings.
 
         narrative = response.text
 
-        # Try to obtain usage information when available.
+        
         tokens = None
 
         if getattr(response, "usage_metadata", None):

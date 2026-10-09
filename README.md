@@ -1,4 +1,4 @@
-# mamaearth-growth-analytics
+# mamaearth-growth-analytics-Shubhangi-Gupta
 Mamaearth Growth Analytics project covering SQL reporting, data cleaning, EDA, visualization, and narrative insights.
 This project analyzes e-commerce orders to identify revenue trends, data-quality issues, return-rate patterns, and operational risk segments. It combines SQL reporting, Python data cleaning/EDA, visualizations, and an optional Gemini-generated business narrative.
 

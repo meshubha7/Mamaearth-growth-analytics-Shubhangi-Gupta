@@ -27,16 +27,13 @@ orders = pd.read_csv(DATA_DIR / "Orders.csv")
 products = pd.read_csv(DATA_DIR / "Products.csv")
 customers = pd.read_csv(DATA_DIR / "Customers.csv")
 
-# Keep a raw copy for reconciliation if needed later
+
 orders_raw = orders.copy()
 
 # -----------------------------
 # Standardize payment method
 # -----------------------------
-# Convert values such as:
-# cod, COD, Card, card, upi
-# into:
-# COD, CARD, UPI
+
 orders["payment_method"] = (
     orders["payment_method"]
     .astype(str)
@@ -63,9 +60,7 @@ orders = orders.drop_duplicates(
     keep="first"
 ).copy()
 
-# -----------------------------
-# Impute missing values
-# -----------------------------
+
 orders["discount_pct"] = orders["discount_pct"].fillna(0)
 
 rating_median = orders["rating"].median()
@@ -123,7 +118,6 @@ return_rates = (
     .sort_values(ascending=False)
 )
 
-# Check that only the three cleaned payment methods remain
 assert set(return_rates.index) == {"COD", "CARD", "UPI"}, \
     f"Unexpected payment methods: {list(return_rates.index)}"
 
@@ -159,9 +153,7 @@ fig.savefig(
 
 plt.close(fig)
 
-# -----------------------------
-# Print final rates
-# -----------------------------
+
 print("Cleaned return rates:")
 print((return_rates * 100).round(1))
 
